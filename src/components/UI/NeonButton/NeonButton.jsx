@@ -9,7 +9,7 @@ const NeonLink = (props) => {
         color: "#fff",
         backgroundColor: "transparent",
         config: {
-          frequency: 0.06,
+          frequency: 0.05,
         },
       },
     }),
@@ -20,18 +20,18 @@ const NeonLink = (props) => {
     api.start({
       from: { opacity: 0 },
       to: [
-        { opacity: 0, config: { frequency: 0.06 } },
+        { opacity: 0, config: { frequency: 0.05 } },
         { opacity: 1 },
         { opacity: 0 },
         { opacity: 1 },
         { opacity: 0 },
         { opacity: 1 },
         { opacity: 0 },
-        { opacity: 1 },
         {
+          opacity: 1,
           backgroundColor: "#fff",
           color: "#000",
-          config: { frequency: 0.75 },
+          config: { frequency: 0.6 },
         },
       ],
     });
@@ -50,6 +50,7 @@ const NeonLink = (props) => {
       href={"https://www.tesla.com/cybertruck/design#payment"}
       onMouseEnter={hoverHandler}
       onMouseLeave={hoverLeave}
+      title={"Order Now"}
       style={{
         ...styling,
         clipPath:
