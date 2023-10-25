@@ -13,7 +13,6 @@ const useAnimateOnScrollDown = () => {
   useEffect(() => {
     const observer = new IntersectionObserver((entries, observer) => {
       const entry = entries[0];
-      console.log("entry.isIntersecting", entry.isIntersecting);
       setElementIsVisible(entry.isIntersecting);
       if (!entry.isIntersecting) {
         setDidAnimate(false);
@@ -36,9 +35,6 @@ const useAnimateOnScrollDown = () => {
 
   const shouldAnimate = elementIsVisible && isScrollingDown && !didAnimate;
   if (shouldAnimate) setDidAnimate(true);
-
-  console.log(shouldAnimate, "Should Animete");
-  console.log(didAnimate, "Did Animate");
 
   return { shouldAnimate, ref };
 };
