@@ -13,9 +13,10 @@ import charging from "../assets/charging/Charging.avif";
 import homeCharging from "../assets/charging/Home-Charging.avif";
 import superCharging from "../assets/Supercharging.avif";
 
-const SHOP = "shop";
-const DISCOVER = "discover";
-const PRODUCTS = "products";
+import apparel from "../assets/shop/Shop-Apparel.avif";
+import chargingShop from "../assets/shop/Shop-Charging.avif";
+import lifestyle from "../assets/shop/Shop-Lifestyle.avif";
+import accessories from "../assets/shop/Shop-Accessories.avif";
 
 export const navProductsData = [
   {
@@ -288,6 +289,89 @@ export const navProductsData = [
       {
         title: "Host Wall Connectors",
         url: "https://www.tesla.com/charging-partners",
+      },
+    ],
+  },
+  {
+    title: "Discover",
+    Resources: [
+      {
+        title: "Demo Drive",
+        url: "https://www.tesla.com/drive",
+      },
+      {
+        title: "Insurance",
+        url: "https://www.tesla.com/insurance",
+      },
+      {
+        title: "Video Guides",
+        url: "https://www.tesla.com/support/videos",
+      },
+      {
+        title: "Customer Stories",
+        url: "https://www.tesla.com/customer-stories",
+      },
+      {
+        title: "Events",
+        url: "https://www.tesla.com/events",
+      },
+    ],
+    "Location Services": [
+      {
+        title: "Find Us",
+        url: "https://www.tesla.com/findus?v=2&bounds=51.766454692859725%2C-64.11035275%2C25.817657074070205%2C-134.42285275&zoom=5&filters=store%2Cservice%2Csupercharger%2Cdestination%20charger%2Cbodyshop%2Cparty%2Cself%20serve%20demo%20drive",
+      },
+      {
+        title: "Trip Planner",
+        url: "https://www.tesla.com/trips",
+      },
+      {
+        title: "Find a Collision Center",
+        url: "https://www.tesla.com/support/collision-support",
+      },
+      {
+        title: "Find a Certified Installer",
+        url: "https://www.tesla.com/support/certified-installers",
+      },
+    ],
+    Company: [
+      {
+        title: "About Us",
+        url: "https://www.tesla.com/about",
+      },
+      {
+        title: "Carrers",
+        url: "https://www.tesla.com/careers",
+      },
+      {
+        title: "Investor Relations",
+        url: "https://ir.tesla.com/#quarterly-disclosure",
+      },
+    ],
+  },
+  {
+    title: "Shop",
+    url: "https://shop.tesla.com/",
+    items: [
+      {
+        title: "Charging",
+        imagePath: chargingShop,
+        url: "https://shop.tesla.com/category/charging",
+      },
+      {
+        title: "Vehicle Accessories",
+        imagePath: accessories,
+        url: "https://shop.tesla.com/category/vehicle-accessories",
+      },
+      {
+        title: "Apparel",
+        imagePath: apparel,
+        url: "https://shop.tesla.com/category/apparel",
+      },
+      {
+        title: "Lifestyle",
+        imagePath: lifestyle,
+        url: "https://shop.tesla.com/category/lifestyle",
       },
     ],
   },

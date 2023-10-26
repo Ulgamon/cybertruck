@@ -1,5 +1,4 @@
 import { useSpring, animated } from "@react-spring/web";
-import { useState } from "react";
 
 const NeonLink = (props) => {
   const [styling, api] = useSpring(
@@ -49,6 +48,7 @@ const NeonLink = (props) => {
     <animated.a
       href={"https://www.tesla.com/cybertruck/design#payment"}
       onMouseEnter={hoverHandler}
+      onClick={hoverHandler}
       onMouseLeave={hoverLeave}
       title={"Order Now"}
       style={{
@@ -56,7 +56,7 @@ const NeonLink = (props) => {
         clipPath:
           "polygon(0 0,100% 0,100% calc(100% - 10px),calc(100% - 10px) 100%,0 100%)",
       }}
-      className="bg-transparent text-sm text-white text-bold mb-16 w-[90%] sm:w-1/3 md:w-[264px] relative w-full h-10"
+      className="bg-transparent z-20 text-sm text-white text-bold mb-12 w-[90%] sm:w-1/3 md:w-[264px] relative h-10"
     >
       <div
         className="bg-white text-sm text-bold w-full h-full absolute top-0 start-0"

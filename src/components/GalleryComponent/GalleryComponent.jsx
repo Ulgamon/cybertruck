@@ -23,7 +23,7 @@ const TransitionComponent = (props) => {
         backgroundRepeat: "no-repeat",
         ...styles,
       }}
-      className="w-full aspect-[3/1] pt-36"
+      className="w-full aspect-[3/1]"
     />
     // <animated.img
     //   style={styles}
@@ -47,7 +47,7 @@ const TextTransitionComponent = (props) => {
 
   return transitions((styles, item) => (
     <animated.div key={item} style={styles} className="text-white h-[300px]">
-      <h2 className="my-5">{props.images[item].title}</h2>
+      <h1 className="my-5">{props.images[item].title}</h1>
       <p>{props.images[item].text}</p>
     </animated.div>
   ));
@@ -58,7 +58,7 @@ const GalleryComponent = () => {
   return (
     <div className="w-full bg-black">
       <TransitionComponent images={images} index={currentImageIndex} />
-      <div className="w-1/2 mx-auto">
+      <div className="w-[90%] lg:w-1/2 mx-auto">
         <SlideComponent
           images={images}
           index={currentImageIndex}
