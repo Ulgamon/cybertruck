@@ -35,7 +35,7 @@ const AnimatedPicture = ({ imagePath }) => {
   return (
     <animated.div
       style={styling}
-      className="w-full md:w-[90%] lg:w-5/6 xl:w-full 2xl:w-5/6 mx-auto"
+      className="w-full z-10 md:w-[90%] lg:w-5/6 xl:w-full max-w-[1240px] mx-auto"
       ref={ref}
     >
       <img src={imagePath} alt={imagePath} />

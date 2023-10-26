@@ -5,36 +5,38 @@
 import { useState, useEffect, useRef } from "react";
 
 const useAnimateOnScrollDown = () => {
-  const [scrollY, setScrollY] = useState(0);
   const [elementIsVisible, setElementIsVisible] = useState();
   const [isScrollingDown, setIsScrollingDown] = useState(false);
-  const [didAnimate, setDidAnimate] = useState(false);
+  const [animateReset, setAnimateReset] = useState(true);
   const ref = useRef();
+  const scrollRef = useRef(0);
   useEffect(() => {
     const observer = new IntersectionObserver((entries, observer) => {
       const entry = entries[0];
       setElementIsVisible(entry.isIntersecting);
-      if (!entry.isIntersecting) {
-        setDidAnimate(false);
+      if (scrollRef.current < ref.current?.offsetTop && !entry.isIntersecting) {
+        setAnimateReset(true);
       }
     });
 
     observer.observe(ref.current);
 
     const scrollListener = window.addEventListener("scroll", (event) => {
-      if (scrollY < window.scrollY) {
+      if (scrollRef.current < window.scrollY) {
         setIsScrollingDown(true);
-      } else {
+      } else if (scrollRef.current > window.scrollY) {
         setIsScrollingDown(false);
       }
-      setScrollY(window.scrollY);
+      scrollRef.current = window.scrollY;
     });
 
-    return removeEventListener("scroll", scrollListener);
-  }, []);
+    return () => {
+      window.removeEventListener("scroll", scrollListener);
+    };
+  }, [ref, scrollRef]);
 
-  const shouldAnimate = elementIsVisible && isScrollingDown && !didAnimate;
-  if (shouldAnimate) setDidAnimate(true);
+  const shouldAnimate = elementIsVisible && isScrollingDown && animateReset;
+  if (shouldAnimate) setAnimateReset(false);
 
   return { shouldAnimate, ref };
 };
