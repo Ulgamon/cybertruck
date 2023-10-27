@@ -5,17 +5,20 @@ import Section2 from "./components/Section2/Section2";
 import { GalleryContextProvider } from "./context/GalleryContext";
 import VideoComponent from "./components/VideoComponent/VideoComponent";
 import Footer from "./components/Footer/Footer";
+import { NavBarContextProvider } from "./context/NavBarContext";
 
 function App() {
   return (
     <>
-      <GalleryContextProvider>
-        <Hero />
-        <Section2 />
-        <GalleryComponent />
-        <VideoComponent />
-        <Footer />
-      </GalleryContextProvider>
+      <NavBarContextProvider>
+        <GalleryContextProvider>
+          <Hero />
+          <Section2 />
+          <GalleryComponent />
+          <VideoComponent />
+          <Footer />
+        </GalleryContextProvider>
+      </NavBarContextProvider>
     </>
   );
 }

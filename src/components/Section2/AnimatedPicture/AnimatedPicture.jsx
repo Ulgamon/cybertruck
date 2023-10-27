@@ -1,4 +1,4 @@
-import useAnimateOnScrollDown from "../../../assets/hooks/useAnimateOnScrollDown";
+import useAnimateOnScrollDown from "../../../hooks/useAnimateOnScrollDown";
 import { useSpring, animated } from "@react-spring/web";
 
 const AnimatedPicture = ({ imagePath }) => {

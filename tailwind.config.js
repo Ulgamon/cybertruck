@@ -6,6 +6,7 @@ export default {
       colors: {
         navText: "#171a20",
         transparent1: "rgba(0,0,0,0)",
+        buttonHover: "rgba(150,150,150,0.2)",
       },
     },
   },
