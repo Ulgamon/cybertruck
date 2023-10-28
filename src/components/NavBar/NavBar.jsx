@@ -7,6 +7,7 @@ import { useContext } from "react";
 import help from "../../assets/hero/help.svg";
 import person from "../../assets/hero/person.svg";
 import web from "../../assets/hero/web.svg";
+import { useTransition, animated } from "@react-spring/web";
 
 const NavBar = () => {
   const {
@@ -17,6 +18,16 @@ const NavBar = () => {
     closeMenu,
     openMenu,
   } = useContext(navBarContext);
+
+  const transitions = useTransition(activeDataIndex, {
+    from: { opacity: 0 },
+    enter: { opacity: 1 },
+    leave: { opacity: 0 },
+    exitBeforeEnter: true,
+    config: {
+      duration: 100,
+    },
+  });
 
   return (
     <>
@@ -83,7 +94,11 @@ const NavBar = () => {
         </ul>
       </nav>
       <NavElement closeMenu={closeMenu}>
-        {decider(information[activeDataIndex])}
+        {transitions((styles, index) => (
+          <animated.div key={index} style={styles}>
+            {decider(information[index])}
+          </animated.div>
+        ))}
       </NavElement>
     </>
   );

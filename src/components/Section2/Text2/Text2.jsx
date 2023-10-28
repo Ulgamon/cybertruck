@@ -1,4 +1,4 @@
-import useAnimateOnScrollDown from "../../../hooks/useAnimateOnScrollDown";
+import useAnimateOnScrollDown from "../../../assets/hooks/useAnimateOnScrollDown";
 import { useSpring, animated } from "@react-spring/web";
 
 const Text2 = ({ title, text }) => {
