@@ -2,7 +2,7 @@ import useAnimateOnScrollDown from "../../../assets/hooks/useAnimateOnScrollDown
 import { useSpring, animated } from "@react-spring/web";
 
 const ExoskeletonText = () => {
-  const { shouldAnimate, ref } = useAnimateOnScrollDown();
+  const { shouldAnimate, ref, animateReset } = useAnimateOnScrollDown();
 
   const [styling, api] = useSpring(
     () => ({
@@ -29,6 +29,14 @@ const ExoskeletonText = () => {
         opacity: 1,
         y: 0,
       },
+    });
+  } else if (animateReset) {
+    api.start({
+      from: {
+        opacity: 0,
+        y: 150,
+      },
+      immediate: true,
     });
   }
 

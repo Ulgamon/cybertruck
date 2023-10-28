@@ -2,8 +2,12 @@ import useAnimateOnScrollDown from "../../../assets/hooks/useAnimateOnScrollDown
 import { useSpring, animated } from "@react-spring/web";
 
 const Text2 = ({ title, text }) => {
-  const { shouldAnimate, ref } = useAnimateOnScrollDown();
-  const { shouldAnimate: shouldAnimate2, ref: ref2 } = useAnimateOnScrollDown();
+  const { shouldAnimate, ref, animateReset } = useAnimateOnScrollDown();
+  const {
+    shouldAnimate: shouldAnimate2,
+    ref: ref2,
+    animateReset: animateReset2,
+  } = useAnimateOnScrollDown();
 
   const [styling, api] = useSpring(
     () => ({
@@ -45,6 +49,14 @@ const Text2 = ({ title, text }) => {
         y: 0,
       },
     });
+  } else if (animateReset) {
+    api.start({
+      from: {
+        opacity: 0,
+        y: 150,
+      },
+      immediate: true,
+    });
   }
 
   if (shouldAnimate2) {
@@ -58,6 +70,14 @@ const Text2 = ({ title, text }) => {
         opacity: 1,
         y: 0,
       },
+    });
+  } else if (animateReset2) {
+    api2.start({
+      from: {
+        opacity: 0,
+        y: 150,
+      },
+      immediate: true,
     });
   }
 

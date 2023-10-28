@@ -38,7 +38,7 @@ const useAnimateOnScrollDown = () => {
   const shouldAnimate = elementIsVisible && isScrollingDown && animateReset;
   if (shouldAnimate) setAnimateReset(false);
 
-  return { shouldAnimate, ref };
+  return { shouldAnimate, ref, animateReset };
 };
 
 export default useAnimateOnScrollDown;

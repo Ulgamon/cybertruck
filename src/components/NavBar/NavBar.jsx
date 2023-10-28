@@ -25,7 +25,7 @@ const NavBar = () => {
     leave: { opacity: 0 },
     exitBeforeEnter: true,
     config: {
-      duration: 100,
+        duration: 200
     },
   });
 

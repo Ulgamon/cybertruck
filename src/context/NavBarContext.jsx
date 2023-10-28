@@ -19,6 +19,12 @@ export const NavBarContextProvider = (props) => {
     }
   };
 
+  if (canSeeMenu) {
+    document.body.style.overflowY = "hidden";
+  } else {
+    document.body.style.overflowY = "visible";
+  }
+
   const openMenu = () => {
     setCanSeeMenu(true);
   };

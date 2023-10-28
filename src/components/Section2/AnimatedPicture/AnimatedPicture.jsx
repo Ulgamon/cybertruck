@@ -2,8 +2,7 @@ import useAnimateOnScrollDown from "../../../assets/hooks/useAnimateOnScrollDown
 import { useSpring, animated } from "@react-spring/web";
 
 const AnimatedPicture = ({ imagePath }) => {
-  const { shouldAnimate, ref } = useAnimateOnScrollDown();
-
+  const { shouldAnimate, ref, animateReset } = useAnimateOnScrollDown();
   const [styling, api] = useSpring(
     () => ({
       from: {
@@ -29,6 +28,14 @@ const AnimatedPicture = ({ imagePath }) => {
         opacity: 1,
         y: 0,
       },
+    });
+  } else if (animateReset) {
+    api.start({
+      from: {
+        opacity: 0,
+        y: 150,
+      },
+      immediate: true,
     });
   }
 
