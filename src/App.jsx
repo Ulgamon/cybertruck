@@ -6,6 +6,7 @@ import { GalleryContextProvider } from "./context/GalleryContext";
 import VideoComponent from "./components/VideoComponent/VideoComponent";
 import Footer from "./components/Footer/Footer";
 import { NavBarContextProvider } from "./context/NavBarContext";
+import AnimatedLink from "./components/AnimatedLink/AnimatedLink";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <GalleryComponent />
           <VideoComponent />
           <Footer />
+          <AnimatedLink />
         </GalleryContextProvider>
       </NavBarContextProvider>
     </>

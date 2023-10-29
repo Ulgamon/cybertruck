@@ -4,6 +4,9 @@
 
 body {
   background-color: black;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  scroll-behavior: smooth;
 }
 
 .hero {
@@ -20,4 +23,8 @@ body {
     background-repeat: no-repeat;
     background-position: center;
   }
+}
+
+.glow {
+  text-shadow: 0 0 8px hsla(0, 0%, 100%, 0.33);
 }

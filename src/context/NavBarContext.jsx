@@ -5,12 +5,16 @@ const navBarContext = createContext({
   activeDataIndex: 0,
   changeActiveIndexData: (index) => {},
   canSeeMenu: false,
+  canSeeMobileMenu: false,
+  closeMobileMenu: () => {},
+  openMobileMenu: () => {},
   closeMenu: () => {},
   openMenu: () => {},
 });
 
 export const NavBarContextProvider = (props) => {
   const [canSeeMenu, setCanSeeMenu] = useState(false);
+  const [canSeeMobileMenu, setCanSeeMobileMenu] = useState(false);
   const [activeDataIndex, setActiveDataIndex] = useState(0);
 
   const changeActiveIndexData = (index) => {
@@ -19,7 +23,18 @@ export const NavBarContextProvider = (props) => {
     }
   };
 
-  if (canSeeMenu) {
+  const openMobileMenu = () => {
+    setCanSeeMobileMenu(true);
+  };
+
+  const closeMobileMenu = () => {
+    setCanSeeMobileMenu(false);
+    setCanSeeMenu(false);
+  };
+
+  const goBackMobileMenu = () => {};
+
+  if (canSeeMenu || canSeeMobileMenu) {
     document.body.style.overflowY = "hidden";
   } else {
     document.body.style.overflowY = "visible";
@@ -38,6 +53,9 @@ export const NavBarContextProvider = (props) => {
     activeDataIndex: activeDataIndex,
     changeActiveIndexData: changeActiveIndexData,
     canSeeMenu: canSeeMenu,
+    canSeeMobileMenu: canSeeMobileMenu,
+    closeMobileMenu: closeMobileMenu,
+    openMobileMenu: openMobileMenu,
     closeMenu: closeMenu,
     openMenu: openMenu,
   };

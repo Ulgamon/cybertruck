@@ -1,6 +1,6 @@
 import { createContext, useState, useEffect, useCallback } from "react";
-import gal1 from "../assets/gallery/05_Desktop.jpg";
-import gal2 from "../assets/gallery/06_Desktop.jpg";
+import gal1 from "../assets/gallery/05_Desktop.avif";
+import gal2 from "../assets/gallery/06_Desktop.avif";
 import gal3 from "../assets/gallery/07_Desktop.jpg";
 import gal4 from "../assets/gallery/08_Desktop.jpg";
 import gal5 from "../assets/gallery/09_Desktop.jpg";

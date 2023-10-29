@@ -43,7 +43,9 @@ const ExoskeletonText = () => {
   return (
     <animated.div style={styling} ref={ref} className="w-full z-0 text-white">
       <div className="w-[90%] sm:max-w-[430px] md:max-w-[840px] mx-auto">
-        <h2 className="text-white text-2xl text-bold my-4">EXOSKELETON</h2>
+        <h2 className="text-white text-2xl glow tracking-widest text-bold my-4">
+          EXOSKELETON
+        </h2>
         <p className="text-sm font-semibold text-md my-2 mb-16">
           Cybertruck is built with an exterior shell made for ultimate
           durability and passenger protection. Starting with a nearly

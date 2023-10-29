@@ -13,7 +13,7 @@ const VideoComponent = () => {
         controls
       ></video>
       <Text2
-        title={<p className="text-3xl">PERFORMANCE AND EFFICIENCY</p>}
+        title={<p className="text-2xl glow">PERFORMANCE AND EFFICIENCY</p>}
         text={
           "Now entering a new class of strength, speed and versatility—only possible with an all-electric design. The powerful drivetrain and low center of gravity provides extraordinary traction control and torque—enabling acceleration from 0-60 mph in as little as 2.9 seconds and up to 500 miles of range."
         }

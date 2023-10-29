@@ -87,14 +87,14 @@ const Text2 = ({ title, text }) => {
         <animated.h2
           ref={ref}
           style={styling}
-          className="text-white text-2xl xl:w-1/3 text-bold my-4"
+          className="text-white text xl:w-1/3 text-bold tracking-widest mb-2 mt-4"
         >
           {title}
         </animated.h2>
         <animated.p
           ref={ref2}
           style={styling2}
-          className="text-sm font-semibold xl:w-2/3 text-md my-2 xl:my-4 mb-16"
+          className="xl:w-2/3 leading-5 mb-16 xl:my-4"
         >
           {text}
         </animated.p>

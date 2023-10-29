@@ -4,7 +4,7 @@ import galleryContext from "../../context/GalleryContext";
 import SlideComponent from "./SlideComponent";
 
 const TransitionComponent = (props) => {
-  const transitions = useTransition([props.index], {
+  const transitions = useTransition(props.index, {
     from: { opacity: 0.7 },
     enter: { opacity: 1 },
     leave: { opacity: 1 },
@@ -15,22 +15,22 @@ const TransitionComponent = (props) => {
   });
 
   return transitions((styles, item) => (
-    <animated.div
-      key={item}
-      style={{
-        backgroundImage: `url(${props.images[item].imageUri})`,
-        backgroundSize: "contain",
-        backgroundRepeat: "no-repeat",
-        ...styles,
-      }}
-      className="w-full aspect-[3/1]"
-    />
-    // <animated.img
-    //   style={styles}
-    //   className="w-full py-16"
-    //   src={props.images[item].imageUri}
-    //   alt={props.images[item].imageUri}
+    // <animated.div
+    //   key={item}
+    //   style={{
+    //     backgroundImage: `url(${props.images[item].imageUri})`,
+    //     backgroundSize: "contain",
+    //     backgroundRepeat: "no-repeat",
+    //     ...styles,
+    //   }}
+    //   className="w-full"
     // />
+    <animated.img
+      style={styles}
+      className="w-full py-16"
+      src={props.images[item].imageUri}
+      alt={props.images[item].imageUri}
+    />
   ));
 };
 

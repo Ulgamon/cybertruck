@@ -17,14 +17,19 @@ const Hero = () => {
               backgroundSize: "contain",
             }}
           /> */}
-          <img className="mx-auto px-5 h-28" src={cybertruck} alt={cybertruck} />
+          <img
+            className="mx-auto px-5 h-28"
+            src={cybertruck}
+            alt={cybertruck}
+          />
         </h1>
-        <p className="w-full px-6 pb-80 pt-1.5 text-xs text-center">
+        <p className="w-full px-6 pb-80 pt-1.5 text-[11px] text-navText font-semibold tracking-[0.2em] text-center">
           BETTER UTILITY THAN A TRUCK WITH MORE PERFORMANCE THAN A SPORTS CAR
         </p>
       </div>
-
-      <NeonLink>ORDER NOW</NeonLink>
+      <div className="w-full mb-16 flex justify-center">
+        <NeonLink>ORDER NOW</NeonLink>
+      </div>
     </div>
   );
 };

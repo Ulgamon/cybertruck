@@ -15,6 +15,8 @@ const NavBar = () => {
     canSeeMenu,
     changeActiveIndexData,
     information,
+    closeMobileMenu,
+    openMobileMenu,
     closeMenu,
     openMenu,
   } = useContext(navBarContext);
@@ -25,7 +27,7 @@ const NavBar = () => {
     leave: { opacity: 0 },
     exitBeforeEnter: true,
     config: {
-        duration: 200
+      duration: 200,
     },
   });
 
@@ -35,7 +37,7 @@ const NavBar = () => {
         <a href="https://www.tesla.com/">
           <img className="w-36 ms-8 px-3 py-2" src={logo} alt="tesla logo" />
         </a>
-        <ul className="flex">
+        <ul className="hidden xl:flex">
           {information.map((el, index) => (
             <li
               onMouseEnter={() => {
@@ -48,7 +50,7 @@ const NavBar = () => {
             </li>
           ))}
         </ul>
-        <ul className="flex justify-center me-8">
+        <ul className="hidden xl:flex justify-center me-8">
           <li className="mx-0.5">
             <a href="https://www.tesla.com/support">
               <div className="p-1 rounded transition-colors	delay-200 ease-linear hover:bg-buttonHover">
@@ -92,6 +94,12 @@ const NavBar = () => {
             </a>
           </li>
         </ul>
+        <button
+          onClick={openMobileMenu}
+          className="font-semibold block xl:hidden py-1 px-4 rounded transition-colors hover:bg-menuButtonHover me-2 delay-200 ease-linear bg-buttonHover"
+        >
+          Menu
+        </button>
       </nav>
       <NavElement closeMenu={closeMenu}>
         {transitions((styles, index) => (

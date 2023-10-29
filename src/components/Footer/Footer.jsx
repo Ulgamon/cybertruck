@@ -19,7 +19,7 @@ const Footer = () => {
         </div>
         <img className="w-full mx-auto" src={cyberPic} alt="cybertruck" />
       </div>
-      <footer className="flex text-sm text-center flex-col sm:flex-row flex-wrap text-white justify-center content-center sm:pb-7">
+      <footer className="flex text-sm text-center flex-col sm:flex-row text-footerLinks flex-wrap text-white justify-center content-center sm:pb-7">
         <a className="sm:m-2 mb-2 " href="https://www.tesla.com/about">
           Tesla © 2023
         </a>
