@@ -32,8 +32,6 @@ export const NavBarContextProvider = (props) => {
     setCanSeeMenu(false);
   };
 
-  const goBackMobileMenu = () => {};
-
   if (canSeeMenu || canSeeMobileMenu) {
     document.body.style.overflowY = "hidden";
   } else {

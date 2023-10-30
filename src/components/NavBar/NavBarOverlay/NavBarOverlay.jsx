@@ -67,6 +67,7 @@ const MobileNav = () => {
     information,
     canSeeMenu,
     activeDataIndex,
+    closeMenu,
     openMenu,
     changeActiveIndexData,
   } = useContext(navBarContext);
@@ -84,10 +85,25 @@ const MobileNav = () => {
             style={styling}
             className="fixed z-50 bg-white top-0 start-0 w-full h-full overflow-auto"
           >
-            <div className="w-full fixed start-0 top-0 border-b bg-white">
+            <div className="w-full fixed flex justify-around start-0 top-0 border-b bg-white">
+              {canSeeMenu && (
+                <>
+                  <button
+                    onClick={closeMenu}
+                    className="m-4 hover:bg-buttonHover rounded"
+                  >
+                    <img
+                      className="w-4 h-4 m-2 rotate-180"
+                      src={next}
+                      alt="previous button"
+                    />
+                  </button>
+                  <p className="font-semibold mx-auto my-4">{information[activeDataIndex].title}</p>
+                </>
+              )}
               <button
                 onClick={closeMobileMenu}
-                className="m-2 hover:bg-buttonHover rounded"
+                className="m-4 ms-auto hover:bg-buttonHover rounded"
               >
                 <img className="w-6 h-6 m-1" src={close} alt="close button" />
               </button>
