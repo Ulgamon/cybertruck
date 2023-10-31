@@ -83,18 +83,18 @@ const Text2 = ({ title, text }) => {
 
   return (
     <div className="w-full z-0 text-white">
-      <div className="w-[90%] max-w-[1240px] flex flex-col xl:flex-row xl:items-start mx-auto">
+      <div className="w-[90%] lg:w-3/4 xl:w-full max-w-[1240px] flex flex-col xl:flex-row xl:items-start mx-auto">
         <animated.h2
           ref={ref}
           style={styling}
-          className="text-white text xl:w-1/3 text-bold tracking-widest mb-2 mt-4"
+          className="text-white text xl:w-[30%] text-bold tracking-widest mb-2 mt-4"
         >
           {title}
         </animated.h2>
         <animated.p
           ref={ref2}
           style={styling2}
-          className="xl:w-2/3 leading-5 mb-16 xl:my-4"
+          className="xl:w-[70%] leading-5 mb-16 xl:my-4"
         >
           {text}
         </animated.p>

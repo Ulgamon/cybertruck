@@ -15,22 +15,22 @@ const TransitionComponent = (props) => {
   });
 
   return transitions((styles, item) => (
-    // <animated.div
-    //   key={item}
-    //   style={{
-    //     backgroundImage: `url(${props.images[item].imageUri})`,
-    //     backgroundSize: "contain",
-    //     backgroundRepeat: "no-repeat",
-    //     ...styles,
-    //   }}
-    //   className="w-full"
-    // />
-    <animated.img
-      style={styles}
-      className="w-full py-16"
-      src={props.images[item].imageUri}
-      alt={props.images[item].imageUri}
+    <animated.div
+      key={item}
+      style={{
+        backgroundImage: `url(${props.images[item].imageUri})`,
+        backgroundSize: "cover",
+        backgroundRepeat: "no-repeat",
+        ...styles,
+      }}
+      className="w-full pb-[56%] md:pb-[42%]"
     />
+    // <animated.img
+    //   style={styles}
+    //   className="w-full  py-16"
+    //   src={props.images[item].imageUri}
+    //   alt={props.images[item].imageUri}
+    // />
   ));
 };
 
@@ -58,7 +58,7 @@ const GalleryComponent = () => {
   return (
     <div className="w-full bg-black">
       <TransitionComponent images={images} index={currentImageIndex} />
-      <div className="w-[90%] lg:w-1/2 mx-auto">
+      <div className="w-[90%] lg:w-1/ max-w-[606px] mx-auto">
         <SlideComponent
           images={images}
           index={currentImageIndex}

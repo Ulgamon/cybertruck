@@ -65,7 +65,7 @@ const NeonLink = (props) => {
             "polygon(0 0,100% 0,100% calc(100% - 10px),calc(100% - 10px) 100%,0 100%,0 0,4px  4px ,4px calc(100% - 4px),calc(100% - 10px - 2px) calc(100% - 4px),calc(100% - 4px) calc(100% - 10px - 2px),calc(100% - 4px) 4px,4px 4px)",
         }}
       />
-      <p className="w-full text-center my-2.5">{props.children}</p>
+      <p className="w-full text-center tracking-widest my-2.5">{props.children}</p>
     </animated.a>
   );
 };
