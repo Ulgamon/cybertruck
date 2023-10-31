@@ -24,7 +24,7 @@ export const NavSideLink = (props) => {
 
 const NavCard = (props) => {
   return (
-    <div className="w-full xl:mx-5 flex sm:flex-col text-center">
+    <div className="w-full xl:mx-5 flex items-center sm:flex-col text-center">
       <a href={props.links[0].url}>
         <img src={props.imagePath} alt={props.imagePath} />
       </a>

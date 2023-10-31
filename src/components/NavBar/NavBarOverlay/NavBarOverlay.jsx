@@ -104,12 +104,18 @@ const MobileNav = () => {
                   </p>
                 </>
               )}
-              <button
+              {canSeeMenu && <button
+                onClick={closeMobileMenu}
+                className="m-4 hover:bg-buttonHover rounded"
+              >
+                <img className="w-6 h-6 m-1" src={close} alt="close button" />
+              </button>}
+              {!canSeeMenu && <button
                 onClick={closeMobileMenu}
                 className="m-4 ms-auto hover:bg-buttonHover rounded"
               >
                 <img className="w-6 h-6 m-1" src={close} alt="close button" />
-              </button>
+              </button>}
             </div>
             {!canSeeMenu && (
               <ul className="pt-16">
