@@ -1,6 +1,6 @@
 const NavModalType3 = (props) => {
   return (
-    <div className="w-3/5 pt-36 pb-16 mx-auto grid grid-cols-4 gap-5">
+    <div className="w-[95%] xl:w-3/5 pt-16 pb-16 mx-auto xl:grid xl:grid-cols-4 xl:gap-5">
       {props.items.map((item) => (
         <a key={item.title} className="text-center" href={item.url}>
           <img className="w-full" src={item.imagePath} alt={item.imagePath} />

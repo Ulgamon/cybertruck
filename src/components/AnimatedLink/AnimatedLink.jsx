@@ -18,7 +18,7 @@ const AnimatedLink = () => {
           style={styling}
           className="fixed bg-black backdrop-blur bg-transparent1 z-50 top-0 start-0 w-full"
         >
-          <div className="w-full m-4 opacity-100 relative pe-10 flex flex-col items-end">
+          <div className="w-1/2 ms-auto sm:w-full my-4 opacity-100 relative pe-5 flex flex-col items-end">
             <NeonLink>ORDER NOW</NeonLink>
           </div>
         </animated.div>

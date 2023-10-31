@@ -9,6 +9,7 @@ export default {
         buttonHover: "rgba(150,150,150,0.2)",
         menuButtonHover: "rgba(150,150,150,0.4)",
         footerLinks: "#d0d1d2",
+        black: "#000",
       },
     },
   },

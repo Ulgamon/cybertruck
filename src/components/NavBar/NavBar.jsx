@@ -35,7 +35,7 @@ const NavBar = () => {
     <>
       <nav className="flex w-full pt-3.5 flex-row z-40 content-center justify-between text-navText">
         <a href="https://www.tesla.com/">
-          <img className="w-36 ms-8 px-3 py-2" src={logo} alt="tesla logo" />
+          <img className="w-36 ms-3 sm:ms-8 px-3 py-2" src={logo} alt="tesla logo" />
         </a>
         <ul className="hidden xl:flex">
           {information.map((el, index) => (

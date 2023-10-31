@@ -8,7 +8,7 @@ import next from "../../../assets/hero/next.svg";
 import { decider } from "../../../data/navData";
 
 const Backdrop = () => {
-  const { canSeeMenu } = useContext(navBarContext);
+  const { canSeeMenu, closeMenu } = useContext(navBarContext);
   const transition = useTransition(canSeeMenu, {
     from: { opacity: 0 },
     enter: { opacity: 1 },
@@ -19,6 +19,7 @@ const Backdrop = () => {
       (styling, isVisible) =>
         isVisible && (
           <animated.div
+            onMouseEnter={closeMenu}
             style={styling}
             className="fixed z-20 backdrop-blur-sm top-0 start-0 h-screen w-full"
           />
@@ -83,9 +84,9 @@ const MobileNav = () => {
         showElement && (
           <animated.div
             style={styling}
-            className="fixed z-50 bg-white top-0 start-0 w-full h-full overflow-auto"
+            className="fixed z-50 bg-white top-0 start-0 w-full h-full overflow-y-auto"
           >
-            <div className="w-full fixed flex justify-around start-0 top-0 border-b bg-white">
+            <div className="w-full fixed flex justify-around me-0 start-0 overflow-y-auto top-0 bg-white">
               {canSeeMenu && (
                 <>
                   <button
@@ -98,7 +99,9 @@ const MobileNav = () => {
                       alt="previous button"
                     />
                   </button>
-                  <p className="font-semibold mx-auto my-4">{information[activeDataIndex].title}</p>
+                  <p className="font-semibold mx-auto my-4">
+                    {information[activeDataIndex].title}
+                  </p>
                 </>
               )}
               <button
